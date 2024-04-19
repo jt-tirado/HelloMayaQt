@@ -15,6 +15,9 @@ public:
     HelloMayaQt(QWidget *parent = nullptr);
     ~HelloMayaQt();
 
+public Q_SLOTS:
+	void onButtonPress(bool value);
+
 private:
     Ui::HelloMayaQtClass ui;
 };

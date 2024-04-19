@@ -95,6 +95,12 @@
       <AdditionalLibraryDirectories>C:\Program Files\Autodesk\Maya2022\devkit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>$(Qt_LINK_OPTIONS_) /export:initializePlugin /export:uninitializePlugin %(AdditionalOptions)</AdditionalOptions>
     </Link>
+    <PreBuildEvent>
+      <Command>python $(SolutionDir)build_helper.py</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>python $(SolutionDir)build_helper.py --post</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>

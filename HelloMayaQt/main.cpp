@@ -15,11 +15,11 @@
 MStatus initializePlugin(MObject plugin)
 {
 	MStatus		st;
-	MFnPlugin	pluginFn(plugin, "Autodesk, Inc.", "1.0", "Any", &st);
+	MFnPlugin	pluginFn(plugin, "Justin Tirado", "1.0", "Any", &st);
 
 	if (!st) {
 		MGlobal::displayError(
-			MString("helixQtCmd - could not initialize plugin: ")
+			MString("HelloMayaQtCmd - could not initialize plugin: ")
 			+ st.errorString()
 		);
 		return st;
@@ -30,7 +30,7 @@ MStatus initializePlugin(MObject plugin)
 
 	if (!st) {
 		MGlobal::displayError(
-			MString("helixQtCmd - could not register '")
+			MString("HelloMayaQtCmd - could not register '")
 			+ HelloMayaQtCmd::commandName + "' command: "
 			+ st.errorString()
 		);
@@ -44,11 +44,11 @@ MStatus initializePlugin(MObject plugin)
 MStatus uninitializePlugin(MObject plugin)
 {
 	MStatus		st;
-	MFnPlugin	pluginFn(plugin, "Autodesk, Inc.", "1.0", "Any", &st);
+	MFnPlugin	pluginFn(plugin);
 
 	if (!st) {
 		MGlobal::displayError(
-			MString("helixQtCmd - could not uninitialize plugin: ")
+			MString("HelloMayaQtCmd - could not uninitialize plugin: ")
 			+ st.errorString()
 		);
 		return st;
@@ -62,7 +62,7 @@ MStatus uninitializePlugin(MObject plugin)
 
 	if (!st) {
 		MGlobal::displayError(
-			MString("helixQtCmd - could not deregister '")
+			MString("HelloMayaQtCmd - could not deregister '")
 			+ HelloMayaQtCmd::commandName + "' command: "
 			+ st.errorString()
 		);
